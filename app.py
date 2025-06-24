@@ -3,8 +3,8 @@ import fitz  # PyMuPDF
 from PIL import Image
 import io
 
-st.set_page_config(page_title="PDF Image & Text Extractor", layout="wide")
-st.title("📄 PDF Image & Text Extractor")
+st.set_page_config(page_title="Text Extractor from PDF", layout="wide")
+st.title("📄 Text Extractor from PDF")
 
 uploaded_file = st.file_uploader("Upload a PDF file", type=["pdf"])
 
