@@ -14,8 +14,6 @@ if uploaded_file is not None:
 
     # Metadata and page count
     st.success(f"PDF loaded successfully with {doc.page_count} pages.")
-    with st.expander("📑 PDF Metadata"):
-        st.json(doc.metadata)
 
     # Iterate through each page
     for i in range(doc.page_count):
@@ -27,6 +25,9 @@ if uploaded_file is not None:
 
         st.subheader(f"📄 Page {i + 1}")
 
+        # Show image of the page
+        st.image(image, caption=f"Rendered Page {i + 1}", use_container_width=True)
+
         # Show text
         with st.expander("📝 Extracted Text"):
             if text.strip():
@@ -34,16 +35,6 @@ if uploaded_file is not None:
             else:
                 st.warning("No text found on this page.")
 
-        # Show image of the page
-        st.image(image, caption=f"Rendered Page {i + 1}", use_container_width=True)
-
-        # Show links
-        with st.expander("🔗 Page Links"):
-            if links:
-                for link in links:
-                    st.json(link)
-            else:
-                st.caption("No links found on this page.")
 
 else:
     st.info("Please upload a PDF file to begin.")
