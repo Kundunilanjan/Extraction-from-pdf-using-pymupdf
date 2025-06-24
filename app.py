@@ -35,7 +35,7 @@ if uploaded_file is not None:
                 st.warning("No text found on this page.")
 
         # Show image of the page
-        st.image(image, caption=f"Rendered Page {i + 1}", use_column_width=True)
+        st.image(image, caption=f"Rendered Page {i + 1}", use_container_width=True)
 
         # Show links
         with st.expander("🔗 Page Links"):
