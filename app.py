@@ -3,8 +3,8 @@ import fitz  # PyMuPDF
 from PIL import Image
 import io
 
-st.set_page_config(page_title="PDF Extractor", layout="wide")
-st.title("📄 PDF Extractor – Metadata, Text, Links + Unique Images")
+st.set_page_config(page_title="PDF Extractor by pymupdf", layout="wide")
+st.title("📄 PDF Extractor – Metadata, Text, Links and Images")
 
 uploaded_file = st.file_uploader("📤 Upload a PDF file", type=["pdf"])
 
@@ -67,7 +67,7 @@ if uploaded_file is not None:
 
     # ─── Final Section: All Unique Embedded Images ─────────────────────
     st.markdown("---")
-    st.header("📸 Unique Embedded Images in PDF")
+    st.header("📸 All Embedded Images in PDF")
 
     if unique_images:
         for idx, (xref, item) in enumerate(unique_images.items(), start=1):
